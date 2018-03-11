@@ -19,7 +19,6 @@ store.posts = []
 
 module.exports = {
     getPosts(req, resp) {
-      console.log('from getPosts...')
       resp.status(200).send(store.posts)
     },
     addPost(req, resp) {
@@ -29,7 +28,6 @@ module.exports = {
       resp.status(201).send({postId: postId})
     },
     updatePost(req, resp) {
-      console.log('from updatePost...')
       store.posts[req.params.postId] = req.body
       resp.status(200).send(store.posts[req.params.postId])
     },
