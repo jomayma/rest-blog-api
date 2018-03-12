@@ -1,0 +1,164 @@
+{
+	"variables": [],
+	"info": {
+		"name": "rest-blog-api",
+		"_postman_id": "361e0cdc-6217-c575-696c-81f3819832ce",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "submit_post",
+			"request": {
+				"url": "http://localhost:3000/posts",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Top 10 ES6 Features every Web Developer must know\",\n    \"url\": \"https://webapplog.com/es6\",\n    \"text\": \"This essay will give you a quick introduction to ES6. If you don’t know what is ES6, it’s a new JavaScript implementatio.\",\n    \"comments\": [ \"Cruel…..var { house, mouse} = No type optimization at all\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update_post",
+			"request": {
+				"url": "http://localhost:3000/posts/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Top 10 ES6 Features\", \"url\":\"http://webapplog.com/es6\", \"text\": \"a must read\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get_posts",
+			"request": {
+				"url": "http://localhost:3000/posts",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete_post",
+			"request": {
+				"url": "http://localhost:3000/posts/2",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "post_comment_to_post",
+			"request": {
+				"url": "http://localhost:3000/posts/1/comments",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"optimization at all\"]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get_comments_from_post",
+			"request": {
+				"url": "http://localhost:3000/posts/1/comments",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update_comment_on_post",
+			"request": {
+				"url": "http://localhost:3000/posts/1/comments/0",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"I think...\"]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete_comment_on_post",
+			"request": {
+				"url": "http://localhost:3000/posts/1/comments/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"I think...\"]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "submit_post_with_comment",
+			"request": {
+				"url": "http://localhost:3000/posts",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Top 10 ES6 Features\", \"url\":\"http://webapplog.com/es6\", \"text\": \"\", \"comments\":[\"I think youre undervaluing the benefit of let and const.\"]}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

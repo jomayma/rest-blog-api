@@ -40,7 +40,6 @@ let objSchema = {
 app.use(bodyParser.json())
 app.use(logger('dev'))
 app.use(errorhandler())
-
 app.use(checkSchema(objSchema), function(req, resp, next){
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -50,44 +49,27 @@ app.use(checkSchema(objSchema), function(req, resp, next){
 })
 
 //Create Post
-app.post('/posts',(req, resp) => {
-    routes.posts.addPost(req, resp)
-})
+app.post('/posts', routes.posts.addPost)
 
 //Read Posts
-app.get('/posts', (req, resp) => {
-    routes.posts.getPosts(req, resp)
-})
+app.get('/posts', routes.posts.getPosts)
 
 //Read Comments
-app.get('/posts/:postId/comments', (req, resp) => {
-    routes.comments.getComments(req, resp)
-})
+app.get('/posts/:postId/comments', routes.comments.getComments)
 
 //Add Comments
-app.post('/posts/:postId/comments', (req, resp) => {
-    routes.comments.addComment(req, resp)
-})
+app.post('/posts/:postId/comments', routes.comments.addComment)
 
 //Update Post
-app.put('/posts/:postId', (req, resp) => {
-
-    routes.posts.updatePost(req, resp)
-})
+app.put('/posts/:postId', routes.posts.updatePost)
 
 //Update Comments
-app.put('/posts/:postId/comments/:commentId', (req, resp) => {
-    routes.comments.updateComment(req, resp)
-})
+app.put('/posts/:postId/comments/:commentId', routes.comments.updateComment)
 
 //Delete Post
-app.delete('/posts/:postId', (req, resp) => {
-    routes.posts.removePost(req, resp)
-})
+app.delete('/posts/:postId', routes.posts.removePost)
 
 //Delete Comment
-app.delete('/posts/:postId/comments/:commentId', (req, resp) => {
-    routes.comments.removeComment(req, resp)
-})
+app.delete('/posts/:postId/comments/:commentId', routes.comments.removeComment)
 
 app.listen(3000)
