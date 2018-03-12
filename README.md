@@ -26,11 +26,13 @@ let store = {
   ]
 }
 ```
-
-> git clone https://github.com/jomayma/rest-blog-api.git
-> cd rest-blog-api
-> npm install
-> npm start
+### HOW MAKE A LOCAL INSTALLATION
+```
+$ git clone https://github.com/jomayma/rest-blog-api.git
+$ cd rest-blog-api
+$ npm install
+$ npm start
+```
 
 To implement the code I have used: **errorhandler, express, express-validator, morgan**
 
