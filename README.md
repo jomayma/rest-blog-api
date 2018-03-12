@@ -27,7 +27,7 @@ let store = {
 }
 ```
 ### HOW MAKE A LOCAL INSTALLATION
-```
+```sh
 $ git clone https://github.com/jomayma/rest-blog-api.git
 $ cd rest-blog-api
 $ npm install
